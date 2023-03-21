@@ -1,34 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/exam_cardview"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="8dp"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="4dp"
-    app:cardUseCompatPadding="true">
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent">-->
 
-    <LinearLayout
+<!--    <TextView-->
+<!--        android:id="@+id/title_text_view"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Ôn thi bằng lái xe"-->
+<!--        android:textSize="20sp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_centerHorizontal="true" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/start_test_button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Bắt đầu thi"-->
+<!--        android:layout_below="@id/title_text_view"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="50dp" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/study_button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Học lý thuyết"-->
+<!--        android:layout_below="@id/start_test_button"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="20dp" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/signs_button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Biển báo đường bộ"-->
+<!--        android:layout_below="@id/study_button"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="20dp" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/tips_button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Mẹo ôn thi"-->
+<!--        android:layout_below="@id/signs_button"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="20dp" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/law_button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Tra cứu luật"-->
+<!--        android:layout_below="@id/tips_button"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="20dp" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/faq_button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Các câu hỏi hay sai"-->
+<!--        android:layout_below="@id/law_button"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="20dp" />-->
+
+<!--</RelativeLayout>-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+    >
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/exam_image"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:scaleType="centerCrop"/>
+        android:orientation="vertical"
+        android:id="@+id/rtl1"
+        >
 
         <TextView
-            android:id="@+id/exam_name"
-            android:layout_width="0dp"
+            android:gravity="center"
+            android:id="@+id/title_text_view"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="16dp"
-            android:layout_weight="1"
-            android:textSize="18sp"/>
-    </LinearLayout>
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:text="Ôn thi giấy phép lái xe"
+            android:textSize="20sp" />
+        <ImageButton
+            android:layout_width="30pt"
+            android:layout_height="30pt"
+            android:layout_marginLeft="18dp"
+            android:layout_toRightOf="@id/title_text_view"
+            android:background="@drawable/pro"></ImageButton>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rtl2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/rtl1"
+        >
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="100pt"
+            android:background="@drawable/banner1">
+        </ImageButton>
+    </RelativeLayout>
 
-</androidx.cardview.widget.CardView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rtl2"
+        >
+
+        <Button
+            android:id="@+id/btnThiSatHach"
+            android:layout_width="wrap_content"
+            android:layout_height="50pt"
+            android:layout_centerHorizontal="false"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            android:text="Học lý thuyết"
+            android:textColor="@color/black"
+
+            />
+    </RelativeLayout>
+</RelativeLayout>
+
