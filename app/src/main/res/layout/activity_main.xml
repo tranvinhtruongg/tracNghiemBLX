@@ -1,73 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent">-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/title_text_view"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Ôn thi bằng lái xe"-->
-<!--        android:textSize="20sp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:layout_centerHorizontal="true" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/start_test_button"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Bắt đầu thi"-->
-<!--        android:layout_below="@id/title_text_view"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginTop="50dp" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/study_button"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Học lý thuyết"-->
-<!--        android:layout_below="@id/start_test_button"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginTop="20dp" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/signs_button"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Biển báo đường bộ"-->
-<!--        android:layout_below="@id/study_button"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginTop="20dp" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/tips_button"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Mẹo ôn thi"-->
-<!--        android:layout_below="@id/signs_button"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginTop="20dp" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/law_button"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Tra cứu luật"-->
-<!--        android:layout_below="@id/tips_button"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginTop="20dp" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/faq_button"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Các câu hỏi hay sai"-->
-<!--        android:layout_below="@id/law_button"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginTop="20dp" />-->
-
-<!--</RelativeLayout>-->
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -99,34 +30,187 @@
     <RelativeLayout
         android:id="@+id/rtl2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80pt"
         android:orientation="vertical"
         android:layout_below="@+id/rtl1"
         >
         <ImageButton
             android:layout_width="match_parent"
-            android:layout_height="100pt"
+            android:layout_height="90pt"
             android:background="@drawable/banner1">
         </ImageButton>
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="55pt"
+        android:id="@+id/ln1"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rtl2"
+        android:orientation="vertical"
+        android:background="@drawable/duongvien_goctron"
         >
 
+        <ImageButton
+            android:id="@+id/imgBtn1"
+            android:layout_width="116dp"
+            android:layout_height="115dp"
+            android:background="@drawable/thi_sat_hach"></ImageButton>
         <Button
-            android:id="@+id/btnThiSatHach"
             android:layout_width="wrap_content"
-            android:layout_height="50pt"
-            android:layout_centerHorizontal="false"
-            android:layout_marginTop="20dp"
-            android:background="@color/white"
-            android:text="Học lý thuyết"
+            android:layout_height="wrap_content"
+            android:text="THI SÁT HẠCH"
+            android:id="@+id/btnThi"
+            android:textSize="6pt"
+            android:backgroundTint="@color/white"
             android:textColor="@color/black"
-
-            />
+            ></Button>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="55pt"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ln1"
+            android:layout_below="@+id/rtl2"
+            android:id="@+id/ln2"
+            android:background="@drawable/duongvien_goctron"
+            android:layout_marginLeft="5pt"
+            android:orientation="vertical"
+            >
+            <ImageButton
+                        android:id="@+id/imgBtn2"
+                        android:layout_width="116dp"
+                        android:layout_height="115dp"
+                        android:background="@drawable/img2"></ImageButton>
+            <Button
+                        android:layout_width="wrap_content"
+                        android:id="@+id/btnHoc"
+                        android:layout_height="wrap_content"
+                        android:text="HỌC LÝ THUYẾT"
+                        android:textSize="6pt"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                        ></Button>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ln3"
+            android:layout_width="55pt"
+            android:layout_marginLeft="5pt"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ln2"
+            android:layout_below="@+id/rtl2"
+            android:orientation="vertical"
+            android:background="@drawable/duongvien_goctron"
+            >
+            <ImageButton
+                android:id="@+id/imgBtn3"
+                android:layout_width="116dp"
+                android:layout_height="115dp"
+                android:background="@drawable/img3"></ImageButton>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BIỂN BÁO ĐƯỜNG BỌ"
+                android:textSize="6pt"
+                android:id="@+id/btnBienBao"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                ></Button>
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="55pt"
+        android:layout_height="85pt"
+        android:layout_below="@+id/ln1"
+        android:orientation="vertical"
+        android:layout_marginTop="3pt"
+        android:id="@+id/ln4"
+        android:background="@drawable/duongvien_goctron"
+        >
+        <ImageButton
+                android:id="@+id/imgBtn4"
+                android:layout_marginTop="5dp"
+                android:layout_width="55pt"
+                android:layout_height="115dp"
+                android:background="@drawable/img4"></ImageButton>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MẸO THI KẾT QUẢ CAO"
+                    android:textSize="6pt"
+                    android:id="@+id/btnMeo"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/black"
+                    ></Button>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="55pt"
+        android:layout_height="85pt"
+        android:layout_below="@id/ln2"
+        android:id="@+id/ln5"
+        android:layout_marginLeft="5pt"
+        android:layout_toRightOf="@+id/ln4"
+        android:background="@drawable/duongvien_goctron"
+        android:layout_marginTop="3pt"
+        android:orientation="vertical">
+        <ImageButton
+            android:id="@+id/imgBtn5"
+            android:layout_marginTop="5dp"
+            android:layout_width="116dp"
+            android:layout_height="115dp"
+            android:background="@drawable/img5"></ImageButton>
+        <Button
+            android:id="@+id/btnTraCuu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TRA CỨU LUẬT"
+            android:textSize="6pt"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            ></Button>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="55pt"
+        android:layout_height="85pt"
+        android:layout_below="@id/ln3"
+        android:layout_marginLeft="5pt"
+        android:layout_toRightOf="@+id/ln5"
+        android:background="@drawable/duongvien_goctron"
+        android:layout_marginTop="3pt"
+        android:orientation="vertical">
+        <ImageButton
+            android:id="@+id/imgBtn6"
+            android:layout_marginTop="5dp"
+            android:layout_width="116dp"
+            android:layout_height="115dp"
+            android:background="@drawable/img6"></ImageButton>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CÁC CÂU HAY SAI"
+            android:textSize="7pt"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:id="@+id/btnCauSai"
+            ></Button>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ln4"
+        >
+        <ImageView
+            android:id="@+id/imgView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/otoo">
+        </ImageView>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFFFF"
+            android:background="@drawable/them"
+            android:textColor="@color/black"
+            android:text="Click me"
+            >
+        </Button>
     </RelativeLayout>
 </RelativeLayout>
 
