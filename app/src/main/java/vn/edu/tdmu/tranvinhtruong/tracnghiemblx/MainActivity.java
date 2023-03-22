@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         list.add(new Photo(R.drawable.banner1));
         list.add(new Photo(R.drawable.banner2));
         list.add(new Photo(R.drawable.banner3));
+        list.add(new Photo(R.drawable.banner4));
+        list.add(new Photo(R.drawable.banner5));
         return list;
     }
 }
