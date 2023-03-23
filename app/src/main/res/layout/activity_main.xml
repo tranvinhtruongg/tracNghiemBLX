@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
 
     >
     <RelativeLayout
@@ -33,12 +34,29 @@
         android:layout_height="80pt"
         android:orientation="vertical"
         android:layout_below="@+id/rtl1"
+        android:background="#00FF00"
         >
-        <ImageButton
+<!--        <ImageButton-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="90pt"-->
+<!--            android:background="@drawable/banner1">-->
+
+<!--        </ImageButton>-->
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="65pt"
+        android:id="@+id/viewpager"
+        ></androidx.viewpager.widget.ViewPager>
+        <me.relex.circleindicator.CircleIndicator
             android:layout_width="match_parent"
-            android:layout_height="90pt"
-            android:background="@drawable/banner1">
-        </ImageButton>
+            android:layout_height="20pt"
+            android:layout_below="@+id/viewpager"
+            android:id="@+id/circle_indicator">
+        </me.relex.circleindicator.CircleIndicator>
+
+
     </RelativeLayout>
 
     <LinearLayout
@@ -202,7 +220,6 @@
             android:layout_height="match_parent"
             android:background="@drawable/otoo">
         </ImageView>
-
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
