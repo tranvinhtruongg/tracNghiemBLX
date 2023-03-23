@@ -202,15 +202,15 @@
             android:layout_height="match_parent"
             android:background="@drawable/otoo">
         </ImageView>
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#FFFFFF"
-            android:background="@drawable/them"
-            android:textColor="@color/black"
-            android:text="Click me"
-            >
-<!--            nam báo-->
+            android:background="@drawable/circle_button"
+            android:text="+"
+            android:textColor="@color/white"
+            android:textSize="50dp">
+            <!--            nam báo-->
         </Button>
     </RelativeLayout>
 </RelativeLayout>

@@ -1,13 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/content"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-
-    <TextView style="?android:textAppearanceMedium"
-        android:padding="16dp"
-        android:lineSpacingMultiplier="1.2"
+    <ScrollView
+        android:id="@+id/content"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Kiểm tra" />
-</ScrollView>
+        android:layout_height="fill_parent">
+        <LinearLayout
+            android:layout_margin="8dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_NumberQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Câu 1"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="#FF0000"
+            android:gravity="center">
+
+        </TextView>
+            <TextView
+                android:id="@+id/tv_Question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Câu hỏi"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="#FF0000" />
+            <ImageView
+                android:id="@+id/img_Question"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@color/purple_200"></ImageView>
+            <RadioGroup
+                android:id="@+id/rg_GroupAnswer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/btn_Ans1"
+                    android:text="dap an 1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </RadioButton>
+                <RadioButton
+                    android:id="@+id/btn_Ans2"
+                    android:text="dap an 2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </RadioButton>
+                <RadioButton
+                    android:id="@+id/btn_Ans3"
+                    android:text="dap an 3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </RadioButton>
+                <RadioButton
+                    android:id="@+id/btn_Ans4"
+                    android:text="dap an 4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </RadioButton>
+            </RadioGroup>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
