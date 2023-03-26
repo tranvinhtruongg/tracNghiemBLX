@@ -42,25 +42,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <RadioButton
-                    android:id="@+id/btn_Ans1"
+                    android:id="@+id/rad_Ans1"
                     android:text="dap an 1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 </RadioButton>
                 <RadioButton
-                    android:id="@+id/btn_Ans2"
+                    android:id="@+id/rad_Ans2"
                     android:text="dap an 2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 </RadioButton>
                 <RadioButton
-                    android:id="@+id/btn_Ans3"
+                    android:id="@+id/rad_Ans3"
                     android:text="dap an 3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 </RadioButton>
                 <RadioButton
-                    android:id="@+id/btn_Ans4"
+                    android:id="@+id/rad_Ans4"
                     android:text="dap an 4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
