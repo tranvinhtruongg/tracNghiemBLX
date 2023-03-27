@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+<!--    tools:context=".HomeFragment">-->
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/rtl1"
+        >
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:text="Ôn thi giấy phép lái xe"
+            android:textSize="20sp" />
+        <ImageButton
+            android:layout_width="30pt"
+            android:layout_height="30pt"
+            android:layout_marginLeft="18dp"
+            android:layout_toRightOf="@id/title_text_view"
+            android:background="@drawable/pro"></ImageButton>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rtl2"
+        android:layout_width="match_parent"
+        android:layout_height="80pt"
+        android:orientation="vertical"
+        android:layout_below="@+id/rtl1"
+        android:background="#00FF00"
+        >
+        <androidx.viewpager.widget.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="65pt"
+            android:id="@+id/viewpager"
+            ></androidx.viewpager.widget.ViewPager>
+        <me.relex.circleindicator.CircleIndicator
+            android:layout_width="match_parent"
+            android:layout_height="20pt"
+            android:layout_below="@+id/viewpager"
+            android:id="@+id/circle_indicator">
+        </me.relex.circleindicator.CircleIndicator>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="55pt"
+        android:id="@+id/ln1"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rtl2"
+        android:orientation="vertical"
+        android:background="@drawable/duongvien_goctron"
+        >
+        <Button
+            android:layout_width="55pt"
+            android:layout_height="75pt"
+            android:text="ôn thi sát hạch"
+            android:background="@drawable/thi_sat_hach"
+            android:gravity="bottom|center"
+            android:id="@+id/btnThi"
+            ></Button>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="55pt"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/ln1"
+        android:layout_below="@+id/rtl2"
+        android:id="@+id/ln2"
+        android:background="@drawable/duongvien_goctron"
+        android:layout_marginLeft="5pt"
+        android:orientation="vertical"
+        >
+        <Button
+            android:layout_width="55pt"
+            android:layout_height="75pt"
+            android:text="HỌC LÝ THUYẾT"
+            android:background="@drawable/img2"
+            android:gravity="bottom|center"
+            android:id="@+id/btnHoc"
+            ></Button>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ln3"
+        android:layout_width="55pt"
+        android:layout_marginLeft="5pt"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/ln2"
+        android:layout_below="@+id/rtl2"
+        android:orientation="vertical"
+        android:background="@drawable/duongvien_goctron"
+        >
+        <Button
+            android:layout_width="55pt"
+            android:layout_height="75pt"
+            android:text="BIỂN BÁO ĐƯỜNG BỌ"
+            android:background="@drawable/img3"
+            android:gravity="bottom|center"
+            android:id="@+id/btnBienBao"
+            ></Button>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="55pt"
+        android:layout_height="85pt"
+        android:layout_below="@+id/ln1"
+        android:orientation="vertical"
+        android:layout_marginTop="3pt"
+        android:id="@+id/ln4"
+        android:background="@drawable/duongvien_goctron"
+        >
+        <Button
+            android:layout_width="55pt"
+            android:layout_height="75pt"
+            android:text="MẸO THI KẾT QUẢ CAO"
+            android:background="@drawable/img4"
+            android:gravity="bottom|center"
+            android:id="@+id/btnMeo"
+            ></Button>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="55pt"
+        android:layout_height="85pt"
+        android:layout_below="@id/ln2"
+        android:id="@+id/ln5"
+        android:layout_marginLeft="5pt"
+        android:layout_toRightOf="@+id/ln4"
+        android:background="@drawable/duongvien_goctron"
+        android:layout_marginTop="3pt"
+        android:orientation="vertical">
+        <Button
+            android:layout_width="55pt"
+            android:layout_height="75pt"
+            android:text="TRA CỨU LUẬT"
+            android:background="@drawable/img5"
+            android:gravity="bottom|center"
+            android:id="@+id/btnTraCuu"
+            ></Button>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="55pt"
+        android:layout_height="85pt"
+        android:layout_below="@id/ln3"
+        android:layout_marginLeft="5pt"
+        android:layout_toRightOf="@+id/ln5"
+        android:background="@drawable/duongvien_goctron"
+        android:layout_marginTop="3pt"
+        android:orientation="vertical">
+        <Button
+            android:layout_width="55pt"
+            android:layout_height="75pt"
+            android:text="CÁC CÂU HAY SAI"
+            android:background="@drawable/img6"
+            android:gravity="bottom|center"
+            android:id="@+id/btnCauSai"
+            ></Button>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ln4"
+        >
+        <ImageView
+            android:id="@+id/imgView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/otoo">
+        </ImageView>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/circle_button"
+            android:text="+"
+            android:textColor="@color/white"
+            android:textSize="50dp">
+            <!--            nam báo-->
+        </Button>
+    </RelativeLayout>
+</RelativeLayout>
