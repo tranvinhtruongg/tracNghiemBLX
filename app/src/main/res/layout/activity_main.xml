@@ -67,21 +67,14 @@
         android:orientation="vertical"
         android:background="@drawable/duongvien_goctron"
         >
-
-        <ImageButton
-            android:id="@+id/imgBtn1"
-            android:layout_width="116dp"
-            android:layout_height="115dp"
-            android:background="@drawable/thi_sat_hach"></ImageButton>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="THI SÁT HẠCH"
-            android:id="@+id/btnThi"
-            android:textSize="6pt"
-            android:backgroundTint="@color/white"
-            android:textColor="@color/black"
-            ></Button>
+<Button
+    android:layout_width="55pt"
+    android:layout_height="75pt"
+    android:text="ôn thi sát hạch"
+    android:background="@drawable/thi_sat_hach"
+    android:gravity="bottom|center"
+    android:id="@+id/btnThi"
+    ></Button>
     </LinearLayout>
         <LinearLayout
             android:layout_width="55pt"
@@ -93,20 +86,14 @@
             android:layout_marginLeft="5pt"
             android:orientation="vertical"
             >
-            <ImageButton
-                        android:id="@+id/imgBtn2"
-                        android:layout_width="116dp"
-                        android:layout_height="115dp"
-                        android:background="@drawable/img2"></ImageButton>
             <Button
-                        android:layout_width="wrap_content"
-                        android:id="@+id/btnHoc"
-                        android:layout_height="wrap_content"
-                        android:text="HỌC LÝ THUYẾT"
-                        android:textSize="6pt"
-                android:backgroundTint="@color/white"
-                android:textColor="@color/black"
-                        ></Button>
+                android:layout_width="55pt"
+                android:layout_height="75pt"
+                android:text="HỌC LÝ THUYẾT"
+                android:background="@drawable/img2"
+                android:gravity="bottom|center"
+                android:id="@+id/btnHoc"
+                ></Button>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/ln3"
@@ -118,19 +105,13 @@
             android:orientation="vertical"
             android:background="@drawable/duongvien_goctron"
             >
-            <ImageButton
-                android:id="@+id/imgBtn3"
-                android:layout_width="116dp"
-                android:layout_height="115dp"
-                android:background="@drawable/img3"></ImageButton>
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="55pt"
+                android:layout_height="75pt"
                 android:text="BIỂN BÁO ĐƯỜNG BỌ"
-                android:textSize="6pt"
+                android:background="@drawable/img3"
+                android:gravity="bottom|center"
                 android:id="@+id/btnBienBao"
-                android:backgroundTint="@color/white"
-                android:textColor="@color/black"
                 ></Button>
         </LinearLayout>
     <LinearLayout
@@ -142,21 +123,14 @@
         android:id="@+id/ln4"
         android:background="@drawable/duongvien_goctron"
         >
-        <ImageButton
-                android:id="@+id/imgBtn4"
-                android:layout_marginTop="5dp"
-                android:layout_width="55pt"
-                android:layout_height="115dp"
-                android:background="@drawable/img4"></ImageButton>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="MẸO THI KẾT QUẢ CAO"
-                    android:textSize="6pt"
-                    android:id="@+id/btnMeo"
-                    android:backgroundTint="@color/white"
-                    android:textColor="@color/black"
-                    ></Button>
+        <Button
+            android:layout_width="55pt"
+            android:layout_height="75pt"
+            android:text="MẸO THI KẾT QUẢ CAO"
+            android:background="@drawable/img4"
+            android:gravity="bottom|center"
+            android:id="@+id/btnMeo"
+            ></Button>
     </LinearLayout>
     <LinearLayout
         android:layout_width="55pt"
@@ -168,20 +142,13 @@
         android:background="@drawable/duongvien_goctron"
         android:layout_marginTop="3pt"
         android:orientation="vertical">
-        <ImageButton
-            android:id="@+id/imgBtn5"
-            android:layout_marginTop="5dp"
-            android:layout_width="116dp"
-            android:layout_height="115dp"
-            android:background="@drawable/img5"></ImageButton>
         <Button
-            android:id="@+id/btnTraCuu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="55pt"
+            android:layout_height="75pt"
             android:text="TRA CỨU LUẬT"
-            android:textSize="6pt"
-            android:backgroundTint="@color/white"
-            android:textColor="@color/black"
+            android:background="@drawable/img5"
+            android:gravity="bottom|center"
+            android:id="@+id/btnTraCuu"
             ></Button>
     </LinearLayout>
     <LinearLayout
@@ -193,19 +160,12 @@
         android:background="@drawable/duongvien_goctron"
         android:layout_marginTop="3pt"
         android:orientation="vertical">
-        <ImageButton
-            android:id="@+id/imgBtn6"
-            android:layout_marginTop="5dp"
-            android:layout_width="116dp"
-            android:layout_height="115dp"
-            android:background="@drawable/img6"></ImageButton>
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="55pt"
+            android:layout_height="75pt"
             android:text="CÁC CÂU HAY SAI"
-            android:textSize="7pt"
-            android:backgroundTint="@color/white"
-            android:textColor="@color/black"
+            android:background="@drawable/img6"
+            android:gravity="bottom|center"
             android:id="@+id/btnCauSai"
             ></Button>
     </LinearLayout>
