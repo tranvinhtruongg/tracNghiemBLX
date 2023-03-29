@@ -20,7 +20,7 @@ import vn.edu.tdmu.tranvinhtruong.tracnghiemblx.R;
 public class ScreenSlidePagerActivity extends FragmentActivity {
 ArrayList<QuestionDTO>listQuestion;
 QuestionDAO questionDAO;
-    private static final int NUM_PAGES = 5;
+    private static final int NUM_PAGES = 25;
 
     /**
      * The pager widget, which handles animation and allows swiping horizontally to access previous

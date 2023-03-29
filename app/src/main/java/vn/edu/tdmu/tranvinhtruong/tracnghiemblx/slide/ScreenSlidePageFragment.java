@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -78,9 +79,20 @@ public class ScreenSlidePageFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         tv_NumberQuestion.setText(String.valueOf(pageNumber+1));
         tv_Question.setText(questionDTOS.get(pageNumber).getQuestion());
+
+
         rad_Ans1.setText(questionDTOS.get(pageNumber).getDA1());
         rad_Ans2.setText(questionDTOS.get(pageNumber).getDA2());
         rad_Ans3.setText(questionDTOS.get(pageNumber).getDA3());
+        if(rad_Ans3.getText().toString().isEmpty())
+        {
+            rad_Ans3.setVisibility(View.INVISIBLE);
+        }
         rad_Ans4.setText(questionDTOS.get(pageNumber).getDA4());
+        if(rad_Ans4.getText().toString().isEmpty())
+        {
+            rad_Ans4.setVisibility(View.INVISIBLE);
+        }
+        
     }
 }
