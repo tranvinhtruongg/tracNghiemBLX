@@ -3,7 +3,7 @@ package vn.edu.tdmu.tranvinhtruong.tracnghiemblx.Question;
 public class QuestionDTO {
 
     private Integer IDQuestion;
-    private String Question;
+    private String question;
     private String DA1;
     private String DA2;
     private String DA3;
@@ -12,20 +12,7 @@ public class QuestionDTO {
     private String DL;
     private String GT;
     private String DA;
-    private Integer MD;
-
-    public QuestionDTO(String question, String DA1, String DA2, String DA3, String DA4, String img, String DL, String GT, String DA, Integer MD) {
-        this.Question = question;
-        this.DA1 = DA1;
-        this.DA2 = DA2;
-        this.DA3 = DA3;
-        this.DA4 = DA4;
-        this.img = img;
-        this.DL = DL;
-        this.GT = GT;
-        this.DA = DA;
-        this.MD = MD;
-    }
+    private Integer ID_Exam;
 
     public Integer getIDQuestion() {
         return IDQuestion;
@@ -36,11 +23,11 @@ public class QuestionDTO {
     }
 
     public String getQuestion() {
-        return Question;
+        return question;
     }
 
     public void setQuestion(String question) {
-        Question = question;
+        this.question = question;
     }
 
     public String getDA1() {
@@ -107,11 +94,24 @@ public class QuestionDTO {
         this.DA = DA;
     }
 
-    public Integer getMD() {
-        return MD;
+    public Integer getID_Exam() {
+        return ID_Exam;
     }
 
-    public void setMD(Integer MD) {
-        this.MD = MD;
+    public void setID_Exam(Integer ID_Exam) {
+        this.ID_Exam = ID_Exam;
+    }
+
+    public QuestionDTO(String question, String DA1, String DA2, String DA3, String DA4, String img, String DL, String GT, String DA, Integer ID_Exam) {
+        this.question = question;
+        this.DA1 = DA1;
+        this.DA2 = DA2;
+        this.DA3 = DA3;
+        this.DA4 = DA4;
+        this.img = img;
+        this.DL = DL;
+        this.GT = GT;
+        this.DA = DA;
+        this.ID_Exam = ID_Exam;
     }
 }

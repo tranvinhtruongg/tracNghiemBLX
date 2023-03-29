@@ -60,14 +60,14 @@
         android:orientation="vertical"
         android:background="@drawable/duongvien_goctron"
         >
+
         <Button
+            android:id="@+id/btnThi"
             android:layout_width="55pt"
             android:layout_height="75pt"
-            android:text="ôn thi sát hạch"
             android:background="@drawable/thi_sat_hach"
             android:gravity="bottom|center"
-            android:id="@+id/btnThi"
-            ></Button>
+            android:text="ôn thi sát hạch"></Button>
     </LinearLayout>
     <LinearLayout
         android:layout_width="55pt"

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
@@ -17,16 +18,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.relex.circleindicator.CircleIndicator;
+import vn.edu.tdmu.tranvinhtruong.tracnghiemblx.slide.ScreenSlidePagerActivity;
 
 public class HomeFragment extends Fragment {
     private ViewPager viewPager;
+    private FragmentTransaction transaction;
     private CircleIndicator circleIndicator;
     private PhotoAdapter photoAdapter;
     Button btnThi, btnHoc, btnBienBao;
+    public HomeFragment(FragmentTransaction fragmentTransaction){
+        this.transaction=fragmentTransaction;
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        ((MainActivity)getActivity()).getSupportActionBar().setTitle("Home");
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
@@ -43,8 +50,22 @@ public class HomeFragment extends Fragment {
 
         circleIndicator.setViewPager(viewPager);
         photoAdapter.registerDataSetObserver(circleIndicator.getDataSetObserver());
+        btnThi=view.findViewById(R.id.btnThi);
+        btnThi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                transaction.replace(R.id.fragment_container,new ThiFragment()).commit();
+            }
+        });
 
     }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+    }
+
     private List<Photo> getListPhoto(){
         List<Photo> list= new ArrayList<>();
         list.add(new Photo(R.drawable.banner1));

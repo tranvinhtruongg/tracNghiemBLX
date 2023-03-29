@@ -1,6 +1,5 @@
 package vn.edu.tdmu.tranvinhtruong.tracnghiemblx.Question;
 
-import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
@@ -35,33 +34,31 @@ public class QuestionDAO {
    /* public QuestionController(DBHelper dbHelper){
         this.dbHelper=dbHelper;
     }*/
-    public ArrayList<QuestionDTO>findQuestionByMD(Integer MD){
-        ArrayList<QuestionDTO>list=new ArrayList<>();
+   public ArrayList<QuestionDTO> findquestionByMD(int ID_Exam){
+       ArrayList<QuestionDTO>List=new ArrayList<QuestionDTO>();
 
-        SQLiteDatabase sqLiteDatabase=dbHelper.getReadableDatabase();
-        String sqlQuery="SELECT * FROM tbl_Question WHERE MD";
-        Log.e("Query",sqlQuery);
-        Cursor cursor= sqLiteDatabase.rawQuery(sqlQuery,null);
-
+       SQLiteDatabase sqLiteDatabase=dbHelper.getReadableDatabase();
+       String sqlQuery="SELECT * FROM tbl_Question WHERE ID_Exam="+ID_Exam;
+       Log.e("sqlQuery",sqlQuery);
+       Cursor cursor= sqLiteDatabase.rawQuery(sqlQuery,null);
        cursor.moveToFirst();
        if(cursor.getCount()!=0){
-            do{
-                QuestionDTO item =new QuestionDTO(
-                        cursor.getString(1),
-                        cursor.getString(2),
-                        cursor.getString(3),
-                        cursor.getString(4),
-                        cursor.getString(5),
-                        cursor.getString(6),
-                        cursor.getString(7),
-                        cursor.getString(8),
-                        cursor.getString(9),
-                        cursor.getInt(10));
+           do{
+               QuestionDTO item =new QuestionDTO(
+                       cursor.getString(1),
+                       cursor.getString(2),
+                       cursor.getString(3),
+                       cursor.getString(4),
+                       cursor.getString(5),
+                       cursor.getString(6),
+                       cursor.getString(7),
+                       cursor.getString(8),
+                       cursor.getString(9),
+                       cursor.getInt(10));
 
-            list.add(item);
-            }while (cursor.moveToNext());
+               List.add(item);
+           }while (cursor.moveToNext());
        }
-
-        return list;
+       return List;
     }
 }

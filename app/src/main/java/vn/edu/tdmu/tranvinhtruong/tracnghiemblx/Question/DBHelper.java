@@ -17,8 +17,8 @@ import android.annotation.TargetApi;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    private static String DB_PATH = "data/data/vn.edu.tdmu.tranvinhtruong.tracnghiemblx/databases/";
-    private static String DB_NAME = "database-thi-bang.db";
+    private static final String DB_PATH = "/data/data/vn.edu.tdmu.tranvinhtruong.tracnghiemblx/databases/";
+    private static final String DB_NAME = "databasethibang.db";
     private static final int DATABASE_VERSION = 1;
 
     private SQLiteDatabase myDataBase;
@@ -99,7 +99,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         if (dbExist) {
             //khong lam gi ca, database da co roi
-//            copyDataBase();
+            //copyDataBase();
         } else {
             this.getReadableDatabase();
             try {

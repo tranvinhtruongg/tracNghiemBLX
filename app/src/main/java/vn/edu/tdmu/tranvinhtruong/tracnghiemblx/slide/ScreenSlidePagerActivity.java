@@ -1,5 +1,6 @@
 package vn.edu.tdmu.tranvinhtruong.tracnghiemblx.slide;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
@@ -17,36 +18,36 @@ import vn.edu.tdmu.tranvinhtruong.tracnghiemblx.Question.QuestionDAO;
 import vn.edu.tdmu.tranvinhtruong.tracnghiemblx.R;
 
 public class ScreenSlidePagerActivity extends FragmentActivity {
+ArrayList<QuestionDTO>listQuestion;
+QuestionDAO questionDAO;
+    private static final int NUM_PAGES = 5;
+
     /**
-     * The number of pages (wizard steps) to show in this demo.
+     * The pager widget, which handles animation and allows swiping horizontally to access previous
+     * and next wizard steps.
      */
-    private static final int NUM_PAGES = 25;
-
-
     private ViewPager2 viewPager;
 
-    /**
-     * The pager adapter, which provides the pages to the view pager widget.
-     */
     private FragmentStateAdapter pagerAdapter;
-    QuestionDAO questionDAO;
-    ArrayList<QuestionDTO>listQuestion;
-    private int MD;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_screen_slide_pager);
-        DBHelper dbHelper = new DBHelper(getApplicationContext());
-        questionDAO=new QuestionDAO(dbHelper);
 
         // Instantiate a ViewPager2 and a PagerAdapter.
         viewPager = findViewById(R.id.pager);
         pagerAdapter = new ScreenSlidePagerAdapter(this);
         viewPager.setAdapter(pagerAdapter);
+        DBHelper dbHelper=new DBHelper(getApplicationContext());
+        questionDAO=new QuestionDAO(dbHelper);
+        listQuestion=questionDAO.findquestionByMD(1);
+        if(!listQuestion.isEmpty())
+        {
+            Log.e("question",listQuestion.size()+"");
+        }
     }
-   /* public ArrayList<QuestionDTO>getData(){
-        return  arr_Ques;
-    }*/
+
     @Override
     public void onBackPressed() {
         if (viewPager.getCurrentItem() == 0) {
@@ -59,10 +60,11 @@ public class ScreenSlidePagerActivity extends FragmentActivity {
         }
     }
 
-    /**
-     * A simple pager adapter that represents 5 ScreenSlidePageFragment objects, in
-     * sequence.
-     */
+    public ArrayList<QuestionDTO> listQuestion() {
+        return listQuestion;
+    }
+
+
     private class ScreenSlidePagerAdapter extends FragmentStateAdapter {
         public ScreenSlidePagerAdapter(FragmentActivity fa) {
             super(fa);
@@ -70,15 +72,13 @@ public class ScreenSlidePagerActivity extends FragmentActivity {
 
         @Override
         public Fragment createFragment(int position) {
-            return ScreenSlidePageFragment.create(position);
+            return  ScreenSlidePageFragment.create(position);
         }
 
         @Override
         public int getItemCount() {
             return NUM_PAGES;
         }
-    }
-    ArrayList<QuestionDTO>getQuestion(){
-        return listQuestion;
+
     }
 }
