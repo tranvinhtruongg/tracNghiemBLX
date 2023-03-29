@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.nav_logout:
+                Notify.exit(MainActivity.this);
                 Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show();
                 break;
         }

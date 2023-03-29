@@ -34,6 +34,7 @@ int ID_Exam;
     CounterClass timer;
     private static final int NUM_PAGES = 25;
 
+
     /**
      * The pager widget, which handles animation and allows swiping horizontally to access previous
      * and next wizard steps.
