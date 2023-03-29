@@ -76,11 +76,34 @@ public class ScreenSlidePageFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        tv_NumberQuestion.setText(String.valueOf(pageNumber+1));
+        tv_NumberQuestion.setText("Câu"+" "+String.valueOf(pageNumber+1));
         tv_Question.setText(questionDTOS.get(pageNumber).getQuestion());
-        rad_Ans1.setText(questionDTOS.get(pageNumber).getDA1());
-        rad_Ans2.setText(questionDTOS.get(pageNumber).getDA2());
-        rad_Ans3.setText(questionDTOS.get(pageNumber).getDA3());
-        rad_Ans4.setText(questionDTOS.get(pageNumber).getDA4());
+
+        rad_Ans1.setText(getItem(pageNumber).getDA1());
+        rad_Ans2.setText(getItem(pageNumber).getDA2());
+        rad_Ans3.setText(getItem(pageNumber).getDA3());
+        rad_Ans4.setText(getItem(pageNumber).getDA4());
+
+        rg_GroupAnswer.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                getItem(pageNumber).choiceID=checkedId;
+                getItem(pageNumber).setTraloi(getChoiceIDFromID(checkedId));
+            }
+        });
+    }
+    public QuestionDTO getItem(int position){
+        return questionDTOS.get(position);
+    }
+    private String getChoiceIDFromID(int ID){
+        if(ID==R.id.rad_Ans1){
+            return "1";
+        }else if(ID==R.id.rad_Ans2){
+            return "2";
+        }else if(ID==R.id.rad_Ans3){
+            return "3";
+        }else if(ID==R.id.rad_Ans4){
+            return "4";
+        }else return "";
     }
 }

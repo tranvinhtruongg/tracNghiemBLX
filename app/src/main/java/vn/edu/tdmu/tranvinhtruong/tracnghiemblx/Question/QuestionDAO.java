@@ -54,7 +54,7 @@ public class QuestionDAO {
                        cursor.getString(7),
                        cursor.getString(8),
                        cursor.getString(9),
-                       cursor.getInt(10));
+                       cursor.getInt(10),"");
 
                List.add(item);
            }while (cursor.moveToNext());

@@ -14,6 +14,18 @@ public class QuestionDTO {
     private String DA;
     private Integer ID_Exam;
 
+    public int choiceID=-1;
+
+    public String getTraloi() {
+        return traloi;
+    }
+
+    public void setTraloi(String traloi) {
+        this.traloi = traloi;
+    }
+
+    private String traloi="";
+
     public Integer getIDQuestion() {
         return IDQuestion;
     }
@@ -102,7 +114,7 @@ public class QuestionDTO {
         this.ID_Exam = ID_Exam;
     }
 
-    public QuestionDTO(String question, String DA1, String DA2, String DA3, String DA4, String img, String DL, String GT, String DA, Integer ID_Exam) {
+    public QuestionDTO(String question, String DA1, String DA2, String DA3, String DA4, String img, String DL, String GT, String DA, Integer ID_Exam,String traloi) {
         this.question = question;
         this.DA1 = DA1;
         this.DA2 = DA2;
@@ -113,5 +125,7 @@ public class QuestionDTO {
         this.GT = GT;
         this.DA = DA;
         this.ID_Exam = ID_Exam;
+        this.traloi=traloi;
+
     }
 }

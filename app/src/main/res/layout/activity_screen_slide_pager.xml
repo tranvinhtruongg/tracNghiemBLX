@@ -57,16 +57,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Trước"/>
+
         <TextView
             android:id="@+id/tv_Position"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:layout_gravity="center_vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1/20"/>
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Xem"
+            android:textSize="20dp"
+            android:textStyle="bold" />
         <TextView
             android:id="@+id/tv_Next"
             android:gravity="center"

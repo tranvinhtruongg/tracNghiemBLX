@@ -36,7 +36,7 @@
                 android:id="@+id/img_Question"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:src="@color/purple_200"></ImageView>
+                android:src="@color/white"></ImageView>
             <RadioGroup
                 android:id="@+id/rg_GroupAnswer"
                 android:layout_width="match_parent"

@@ -53,6 +53,7 @@ public class ThiFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent=new Intent(getActivity(), ScreenSlidePagerActivity.class);
+                intent.putExtra("ID_Exam",position+1);
                 startActivity(intent);
             }
         });

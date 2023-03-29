@@ -9,6 +9,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -40,8 +41,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
 
         DBHelper dbHelper=new DBHelper(getApplicationContext());
+//        try {
+//            dbHelper.deleteDataBase();
+//          Toast.makeText(this, "Xóa thành công", Toast.LENGTH_SHORT).show();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//           Toast.makeText(this, "bi loi rui", Toast.LENGTH_SHORT).show();
+//       }
         try {
             dbHelper.createDataBase();
+            Toast.makeText(this, "Coppy thành công", Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
