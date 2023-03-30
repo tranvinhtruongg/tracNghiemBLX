@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DoneActivity">
+
+    <TextView
+        android:text="Kết quả kiểm tra"
+        android:textSize="20dp"
+        android:background="#00FF00"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+    </TextView>
+    <TextView
+        android:id="@+id/tvDiem"
+        android:textSize="40dp"
+        android:gravity="center"
+        android:textColor="#FF0000"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+    </TextView>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="150dp">
+
+        <TextView
+            android:id="@+id/tvTrue"
+            android:text=""
+            android:textSize="30dp"
+            android:gravity="center"
+            android:textColor="#00FF00"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"></TextView>
+        <TextView
+            android:id="@+id/tvFalse"
+            android:text=""
+            android:textSize="30dp"
+            android:gravity="center"
+            android:textColor="#FF0000"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"></TextView>
+    </LinearLayout>
+    <LinearLayout
+
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+        <Button
+            android:id="@+id/btnXemlai"
+            android:text="Xem lại bài thi"
+            android:layout_gravity="center"
+            android:background="@drawable/duongvien_goctron"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"></Button>
+        <Button
+            android:id="@+id/btnLamlai"
+            android:text="Làm lại bài thi"
+            android:layout_gravity="center"
+            android:background="@drawable/duongvien_goctron"
+            android:backgroundTint="#00FF00	"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </Button>
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnDeTT"
+        android:text="Làm đề thi tiếp theo"
+        android:background="@drawable/duongvien_goctron"
+        android:layout_width="fill_parent"
+        android:backgroundTint="#0000FF	"
+        android:layout_height="wrap_content"></Button>
+
+</LinearLayout>

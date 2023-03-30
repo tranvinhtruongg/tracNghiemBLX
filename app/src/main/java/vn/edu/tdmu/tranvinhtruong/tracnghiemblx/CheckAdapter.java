@@ -49,7 +49,7 @@ public class CheckAdapter extends BaseAdapter {
 
         }
         int i=position+1;
-        holder.txtCau.setText("Câu"+i+": ");
+        holder.txtCau.setText("Câu"+i+":   ");
         holder.txtAns.setText(data.getTraloi());
         return convertView;
 

@@ -1,6 +1,8 @@
 package vn.edu.tdmu.tranvinhtruong.tracnghiemblx.Question;
 
-public class QuestionDTO {
+import java.io.Serializable;
+
+public class QuestionDTO implements Serializable {
 
     private Integer _id;
     private String question;

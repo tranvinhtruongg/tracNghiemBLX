@@ -8,12 +8,15 @@
         <GridView
             android:id="@+id/gv_check_ans"
             android:numColumns="4"
+            android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="200pt" />
         <Button
             android:id="@+id/btnCancel"
             android:textSize="20dp"
             android:text="Đóng"
+            android:backgroundTint="#00FF00"
+            android:background="@drawable/duongvien_goctron"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"></Button>
 
