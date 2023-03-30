@@ -1,5 +1,6 @@
 package vn.edu.tdmu.tranvinhtruong.tracnghiemblx.slide;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -29,6 +30,8 @@ public class ScreenSlidePageFragment extends Fragment {
 
     private int pageNumber;
     private static String ARG_Page="page";
+    private static String ARG_Check="checkAns";
+    private int checkAnser;
     TextView tv_NumberQuestion, tv_Question;
     RadioGroup rg_GroupAnswer;
     RadioButton rad_Ans1, rad_Ans2, rad_Ans3, rad_Ans4;
@@ -58,6 +61,7 @@ public class ScreenSlidePageFragment extends Fragment {
         try {
             screenSlidePagerActivity= (ScreenSlidePagerActivity) getActivity();
             pageNumber=getArguments().getInt(ARG_Page);
+            checkAnser=getArguments().getInt(ARG_Check);
             questionDTOS=screenSlidePagerActivity.listQuestion();
         }catch (Exception ex){
           Toast.makeText(getContext(),"Lỗi",Toast.LENGTH_LONG).show();
@@ -66,10 +70,11 @@ public class ScreenSlidePageFragment extends Fragment {
 
     }
 
-    public static ScreenSlidePageFragment create(int pageNumber) {
+    public static ScreenSlidePageFragment create(int pageNumber, int checkAns) {
         ScreenSlidePageFragment screenSlidePageFragment = new ScreenSlidePageFragment();
         Bundle bundle = new Bundle();
         bundle.putInt(ARG_Page,pageNumber);
+        bundle.putInt(ARG_Check,checkAns);
         screenSlidePageFragment.setArguments(bundle);
         return screenSlidePageFragment;
     }
@@ -94,6 +99,13 @@ public class ScreenSlidePageFragment extends Fragment {
         {
             rad_Ans4.setVisibility(View.INVISIBLE);
         }
+        if(checkAnser!=0){
+            rad_Ans1.setClickable(false);
+            rad_Ans2.setClickable(false);
+            rad_Ans3.setClickable(false);
+            rad_Ans4.setClickable(false);
+            getCheckAns(getItem(pageNumber).getDA().toString());
+        }
         rg_GroupAnswer.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -115,5 +127,17 @@ public class ScreenSlidePageFragment extends Fragment {
         }else if(ID==R.id.rad_Ans4){
             return "4";
         }else return "";
+    }
+    private void getCheckAns(String ans)
+    {
+        if(ans.equals("1")==true){
+            rad_Ans1.setBackgroundColor(Color.GREEN);
+        }else if(ans.equals("2")==true){
+            rad_Ans2.setBackgroundColor(Color.GREEN);
+        }else if(ans.equals("3")==true){
+            rad_Ans3.setBackgroundColor(Color.GREEN);
+        }else if(ans.equals("4")==true){
+            rad_Ans4.setBackgroundColor(Color.GREEN);
+        }else ;
     }
 }

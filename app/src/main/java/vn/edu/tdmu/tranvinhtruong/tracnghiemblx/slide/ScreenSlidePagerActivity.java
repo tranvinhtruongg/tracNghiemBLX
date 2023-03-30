@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import vn.edu.tdmu.tranvinhtruong.tracnghiemblx.CheckAdapter;
+import vn.edu.tdmu.tranvinhtruong.tracnghiemblx.DoneActivity;
 import vn.edu.tdmu.tranvinhtruong.tracnghiemblx.Question.DBHelper;
 import vn.edu.tdmu.tranvinhtruong.tracnghiemblx.Question.QuestionDTO;
 import vn.edu.tdmu.tranvinhtruong.tracnghiemblx.Question.QuestionDAO;
@@ -29,8 +30,9 @@ import vn.edu.tdmu.tranvinhtruong.tracnghiemblx.R;
 public class ScreenSlidePagerActivity extends FragmentActivity {
 ArrayList<QuestionDTO>listQuestion;
 QuestionDAO questionDAO;
-TextView tv_Clock,tv_Position;
+TextView tv_Clock,tv_Position,tvScore,tv_Finish;
 int ID_Exam;
+private int checkAns=0;
     CounterClass timer;
     private static final int NUM_PAGES = 25;
 
@@ -60,6 +62,8 @@ int ID_Exam;
         listQuestion=questionDAO.findquestionByMD(ID_Exam);
 
         tv_Position=(TextView)findViewById(R.id.tv_Position);
+        tvScore=(TextView)findViewById(R.id.tvScore);
+        tv_Finish=(TextView)findViewById(R.id.tv_Finish);
         tv_Position.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,6 +72,14 @@ int ID_Exam;
         });
         tv_Clock=(TextView) findViewById(R.id.tv_Clock);
         timer=new CounterClass(1200*1000,1000);
+        tvScore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1=new Intent(ScreenSlidePagerActivity.this, DoneActivity.class);
+                intent1.putExtra("listQues",listQuestion);
+                startActivity(intent1);
+            }
+        });
         if(!listQuestion.isEmpty())
         {
             Log.e("question",listQuestion.size()+"");
@@ -108,7 +120,7 @@ int ID_Exam;
 
         @Override
         public Fragment createFragment(int position) {
-            return  ScreenSlidePageFragment.create(position);
+            return  ScreenSlidePageFragment.create(position,checkAns);
         }
 
         @Override
@@ -149,14 +161,34 @@ int ID_Exam;
                 dialog.dismiss();
             }
         });
-        Button btnCancel;
+        Button btnCancel,btnFinish;
         btnCancel=(Button) dialog.findViewById(R.id.btnCancel);
+
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
             }
         });
+        tv_Finish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                timer.cancel();
+                result();
+                dialog.dismiss();
+            }
+        });
         dialog.show();
+    }
+    public void result(){
+        checkAns=1;
+        if(viewPager.getCurrentItem()>=5){
+            viewPager.setCurrentItem(viewPager.getCurrentItem()-4);
+        }else if(viewPager.getCurrentItem()<=5){
+            viewPager.setCurrentItem(viewPager.getCurrentItem()+4);
+        }
+        tvScore.setVisibility(View.VISIBLE);
+        tv_Finish.setVisibility(View.GONE);
+
     }
 }
