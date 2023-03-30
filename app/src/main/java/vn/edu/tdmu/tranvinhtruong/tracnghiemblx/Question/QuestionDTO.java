@@ -2,7 +2,7 @@ package vn.edu.tdmu.tranvinhtruong.tracnghiemblx.Question;
 
 public class QuestionDTO {
 
-    private Integer IDQuestion;
+    private Integer _id;
     private String question;
     private String DA1;
     private String DA2;
@@ -26,12 +26,12 @@ public class QuestionDTO {
 
     private String traloi="";
 
-    public Integer getIDQuestion() {
-        return IDQuestion;
+    public Integer get_id() {
+        return _id;
     }
 
-    public void setIDQuestion(Integer IDQuestion) {
-        this.IDQuestion = IDQuestion;
+    public void set_id(Integer _id) {
+        this._id = _id;
     }
 
     public String getQuestion() {

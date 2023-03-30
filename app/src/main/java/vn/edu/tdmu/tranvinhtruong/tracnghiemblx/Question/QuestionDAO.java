@@ -61,4 +61,13 @@ public class QuestionDAO {
        }
        return List;
     }
+    public Cursor getSearchQuestion(String key)
+    {
+        SQLiteDatabase sqLiteDatabase=dbHelper.getReadableDatabase();
+        Cursor cursor= sqLiteDatabase.rawQuery("SELECT * FROM tbl_Question WHERE question like '%"+key+"%'",null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+        return cursor;
+    }
 }
