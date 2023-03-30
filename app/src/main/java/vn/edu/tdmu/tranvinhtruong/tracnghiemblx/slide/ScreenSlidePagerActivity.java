@@ -6,12 +6,15 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
@@ -30,8 +33,9 @@ import vn.edu.tdmu.tranvinhtruong.tracnghiemblx.R;
 public class ScreenSlidePagerActivity extends FragmentActivity {
 ArrayList<QuestionDTO>listQuestion;
 QuestionDAO questionDAO;
-TextView tv_Clock,tv_Position,tvScore,tv_Finish;
+TextView tv_Clock,tv_Position,tvScore,tv_Finish,tv_Next, tv_Back;
 int ID_Exam;
+int page =0;
 private int checkAns=0;
     CounterClass timer;
     private static final int NUM_PAGES = 25;
@@ -63,6 +67,8 @@ private int checkAns=0;
 
         tv_Position=(TextView)findViewById(R.id.tv_Position);
         tvScore=(TextView)findViewById(R.id.tvScore);
+        tv_Back=(TextView)findViewById(R.id.tv_Back);
+        tv_Next=(TextView)findViewById(R.id.tv_Next);
         tv_Finish=(TextView)findViewById(R.id.tv_Finish);
         tv_Position.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -161,7 +167,7 @@ private int checkAns=0;
                 dialog.dismiss();
             }
         });
-        Button btnCancel,btnFinish;
+        Button btnCancel;
         btnCancel=(Button) dialog.findViewById(R.id.btnCancel);
 
         btnCancel.setOnClickListener(new View.OnClickListener() {
@@ -173,13 +179,47 @@ private int checkAns=0;
         tv_Finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                timer.cancel();
+//                result();
+//                dialog.dismiss();
+//                Intent intent1=new Intent(ScreenSlidePagerActivity.this,DoneActivity.class);
+//                startActivity(intent1);
                 timer.cancel();
                 result();
-                dialog.dismiss();
+                showAlertDialog();
             }
         });
         dialog.show();
     }
+
+    public void showAlertDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Kết thúc bài thi");
+        builder.setMessage("Bạn có muốn kết thúc bài thi không?");
+        builder.setCancelable(false);
+        builder.setNegativeButton("Có", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                result();
+                Intent intent = new Intent(getApplicationContext(), DoneActivity.class);
+                intent.putExtra("listQues",listQuestion);
+                startActivity(intent);
+            }
+        });
+        builder.setPositiveButton("Không", new DialogInterface.OnClickListener() {
+
+
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+    }
+
     public void result(){
         checkAns=1;
         if(viewPager.getCurrentItem()>=5){
@@ -189,6 +229,6 @@ private int checkAns=0;
         }
         tvScore.setVisibility(View.VISIBLE);
         tv_Finish.setVisibility(View.GONE);
-
     }
+
 }
