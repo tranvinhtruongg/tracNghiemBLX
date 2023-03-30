@@ -13,7 +13,8 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-        <TextView
+
+            <TextView
             android:id="@+id/tv_NumberQuestion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,6 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:src="@color/white"></ImageView>
+
             <RadioGroup
                 android:id="@+id/rg_GroupAnswer"
                 android:layout_width="match_parent"
@@ -65,9 +67,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 </RadioButton>
-            </RadioGroup>
-        </LinearLayout>
-    </ScrollView>
 
+                <TextView
+                    android:id="@+id/tvGiaithich"
+                    android:layout_width="match_parent"
+                    android:layout_height="165dp"
+                    android:text="" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

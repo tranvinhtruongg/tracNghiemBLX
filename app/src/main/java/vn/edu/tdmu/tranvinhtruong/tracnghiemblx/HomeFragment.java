@@ -25,6 +25,7 @@ public class HomeFragment extends Fragment {
     private FragmentTransaction transaction;
     private CircleIndicator circleIndicator;
     private PhotoAdapter photoAdapter;
+
     Button btnThi, btnHoc, btnBienBao;
     public HomeFragment(FragmentTransaction fragmentTransaction){
         this.transaction=fragmentTransaction;
@@ -35,6 +36,7 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         ((MainActivity)getActivity()).getSupportActionBar().setTitle("Home");
         return inflater.inflate(R.layout.fragment_home, container, false);
+
     }
 
     @Override
