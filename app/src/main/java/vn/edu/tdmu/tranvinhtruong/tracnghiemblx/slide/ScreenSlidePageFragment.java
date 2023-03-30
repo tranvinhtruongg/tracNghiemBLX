@@ -106,6 +106,7 @@ public class ScreenSlidePageFragment extends Fragment {
             rad_Ans4.setClickable(false);
             getCheckAns(getItem(pageNumber).getDA().toString());
         }
+        img_Question.setImageResource(getResources().getIdentifier(getItem(pageNumber).getImg()+"","drawable","vn.edu.tdmu.tranvinhtruong.tracnghiemblx"));
         rg_GroupAnswer.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -113,6 +114,7 @@ public class ScreenSlidePageFragment extends Fragment {
                 getItem(pageNumber).setTraloi(getChoiceIDFromID(checkedId));
             }
         });
+
     }
     public QuestionDTO getItem(int position){
         return questionDTOS.get(position);
